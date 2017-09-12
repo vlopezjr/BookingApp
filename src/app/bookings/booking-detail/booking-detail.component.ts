@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { CurrencyPipe } from '@angular/common';
 
 import { Booking } from '../shared/booking';
 
