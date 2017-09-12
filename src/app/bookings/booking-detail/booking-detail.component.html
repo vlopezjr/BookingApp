@@ -1,4 +1,4 @@
-<div *ngIf="booking">
+<div class="container" *ngIf="booking">
     <h2>Booking Detail - {{ booking.key }}</h2>
 
 
@@ -12,15 +12,15 @@
                         <tbody>
 
                             <tr>
-                                <td class="text-success"><i class="fa fa-user"></i> Name</td>
+                                <td class="text-primary"><i class="fa fa-user"></i> Name</td>
                                 <td>{{ booking.promoterName}}</td>
                             </tr>
                             <tr>
-                                <td class="text-success"><i class="fa fa-mobile"></i> Cell</td>
+                                <td class="text-primary"><i class="fa fa-mobile"></i> Cell</td>
                                 <td>{{ booking.promoterNumber}}</td>
                             </tr>
                             <tr>
-                                <td class="text-success"><i class="fa fa-envelope-o"></i> Email</td>
+                                <td class="text-primary"><i class="fa fa-envelope-o"></i> Email</td>
                                 <td>{{ booking.promoterEmail}}</td>
                             </tr>
                         </tbody>
@@ -38,27 +38,27 @@
                     <table class="table">
                         <tbody>
                             <tr>
-                                <td class="text-success"><i class="fa fa-user"></i> Name</td>
+                                <td class="text-primary"><i class="fa fa-user"></i> Name</td>
                                 <td>{{ booking.venueName}}</td>
                             </tr>
                             <tr>
-                                <td class="text-success"><i class="fa fa-mobile"></i> Address</td>
+                                <td class="text-primary"><i class="fa fa-mobile"></i> Address</td>
                                 <td>{{ booking.venueAddress}}</td>
                             </tr>
                             <tr>
-                                <td class="text-success"><i class="fa fa-envelope-o"></i> City</td>
+                                <td class="text-primary"><i class="fa fa-envelope-o"></i> City</td>
                                 <td>{{ booking.venueCity}}</td>
                             </tr>
                             <tr>
-                                <td class="text-success"><i class="fa fa-envelope-o"></i> State</td>
+                                <td class="text-primary"><i class="fa fa-envelope-o"></i> State</td>
                                 <td>{{ booking.venueState}}</td>
                             </tr>
                             <tr>
-                                <td class="text-success"><i class="fa fa-envelope-o"></i> Website</td>
+                                <td class="text-primary"><i class="fa fa-envelope-o"></i> Website</td>
                                 <td>{{ booking.venueWebsite}}</td>
                             </tr>
                             <tr>
-                                <td class="text-success"><i class="fa fa-envelope-o"></i> Age Restriction</td>
+                                <td class="text-primary"><i class="fa fa-envelope-o"></i> Age Restriction</td>
                                 <td></td>
                             </tr>
                         </tbody>
@@ -73,31 +73,31 @@
                     <table class="table">
                         <tbody>
                             <tr>
-                                <td class="text-success"><i class="fa fa-user"></i> Date</td>
+                                <td class="text-primary"><i class="fa fa-user"></i> Date</td>
                                 <td>{{ booking.eventDate | date:'dd/MM/yyyy'}}</td>
                             </tr>
                             <tr>
-                                <td class="text-success"><i class="fa fa-mobile"></i> Time</td>
+                                <td class="text-primary"><i class="fa fa-mobile"></i> Time</td>
                                 <td>{{ booking.eventTime}}</td>
                             </tr>
                             <tr>
-                                <td class="text-success"><i class="fa fa-envelope-o"></i> Quoted Amount</td>
+                                <td class="text-primary"><i class="fa fa-envelope-o"></i> Quoted Amount</td>
                                 <td>{{ booking.eventQuotedAmount | currency:'USD':true:'1.2-2' }}</td>
                             </tr>
                             <tr>
-                                <td class="text-success"><i class="fa fa-envelope-o"></i> Final Amount</td>
+                                <td class="text-primary"><i class="fa fa-envelope-o"></i> Final Amount</td>
                                 <td>{{ booking.eventFinalAmount | currency:'USD':true:'1.2-2' }}</td>
                             </tr>
                             <tr>
-                                <td class="text-success"><i class="fa fa-envelope-o"></i> Dancers</td>
+                                <td class="text-primary"><i class="fa fa-envelope-o"></i> Dancers</td>
                                 <td>{{ booking.includeDancers }}</td>
                             </tr>
                             <tr>
-                                <td class="text-success"><i class="fa fa-envelope-o"></i> Merch Booth</td>
+                                <td class="text-primary"><i class="fa fa-envelope-o"></i> Merch Booth</td>
                                 <td>{{ booking.includeMerchBooth }}</td>
                             </tr>
                             <tr>
-                                <td class="text-success"><i class="fa fa-envelope-o"></i> Funded</td>
+                                <td class="text-primary"><i class="fa fa-envelope-o"></i> Funded</td>
                                 <td>{{ booking.isFunded}}</td>
                             </tr>
                         </tbody>
@@ -112,7 +112,7 @@
                     <table class="table">
                         <tbody>
                             <tr>
-                                <td class="text-success"><i class="fa fa-user"></i> Instructions</td>
+                                <td class="text-primary"><i class="fa fa-user"></i> Instructions</td>
                                 <td>{{ booking.specialInstructions}}</td>
                             </tr>
                         </tbody>
@@ -127,8 +127,8 @@
                     <table class="table">
                         <tbody>
                             <tr *ngFor="let note of booking.notes">
-                                <td class="text-success" style="width:10%"><i class="fa fa-calendar"></i> {{ note.createdDate | date:'dd/MM/yyyy' }}</td>
-                                <td class="text-success" style="width:10%"><i class="fa fa-user"></i> {{ note.createdUserName}}</td>
+                                <td class="text-primary" style="width:15%"><i class="fa fa-calendar"></i> {{ note.createdDate | date:'dd/MM/yyyy' }}</td>
+                                <td class="text-primary" style="width:10%"><i class="fa fa-user"></i> {{ note.createdUserName}}</td>
                                 <td class="text-left">{{ note.textValue}}</td>
                             </tr>
 

@@ -7,12 +7,16 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import { BookingsComponent } from './bookings/bookings.component';
 import { BookingDetailComponent } from './bookings/booking-detail/booking-detail.component';
+import { BookingAddComponent } from './bookings/booking-add/booking-add.component';
+import { BookingEditComponent } from './bookings/booking-edit/booking-edit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BookingsComponent,
-    BookingDetailComponent
+    BookingDetailComponent,
+    BookingAddComponent,
+    BookingEditComponent
   ],
   imports: [
       BrowserModule,

@@ -1,3 +1,4 @@
+<!--
 <div>
     <h2>Quotes</h2>
     <table class="table table-condensed table-striped">
@@ -23,10 +24,14 @@
         
     </table>
 </div>
-
-<div>
+-->
+<div class="container">
     <h2>Bookings</h2>
-    <table class="table table-condensed table-striped">
+    <div>
+            <input #funded type="checkbox" id="funded" name="funded" checked (change)="filterBookings($event)">
+            <label for="funded">Include Funded</label>
+    </div>
+    <table class="table table-sm table-bordered">
         <thead>
             <tr>
                 <th>Date</th>
@@ -38,17 +43,22 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let booking of bookings">
+            <tr *ngFor="let booking of bookings" [ngClass]="{ 'table-primary': booking.isFunded }">
                 <td>{{ booking.eventDate | date }}</td>
                 <td>{{ booking.venueName }}</td>
                 <td>{{ booking.venueCity }}</td>
                 <td>{{ booking.venueState }}</td>
                 <td>{{ booking.eventQuotedAmount | currency:'USD':true:'1.2-2' }}</td>
-                <td><button class="btn btn-primary" (click)="onSelect(booking)">View</button></td></tr>
+                <td>
+                    <button class="btn btn-primary" (click)="viewBooking(booking)">View</button>
+                    <button class="btn btn-primary" (click)="editBooking(booking)">Edit</button>
+                    <button class="btn btn-danger" (click)="discardBooking(booking)" [disabled]="booking.isFunded">Discard</button>
+                </td></tr>
         </tbody>
 
     </table>
 </div>
 <div>
    <booking-detail [booking]="selectedBooking"></booking-detail> 
+   <booking-edit [booking]="bookingToEdit"></booking-edit>
 </div>
