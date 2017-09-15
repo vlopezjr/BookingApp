@@ -1,32 +1,5 @@
-<!--
-<div>
-    <h2>Quotes</h2>
-    <table class="table table-condensed table-striped">
-        <thead>
-            <tr>
-                <th>Date</th>
-                <th>Venue</th>
-                <th>City</th>
-                <th>State</th>
-                <th>Amount</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let booking of quotes">
-                <td>{{ booking.eventDate | date }}</td>
-                <td>{{ booking.venueName }}</td>
-                <td>{{ booking.venueCity }}</td>
-                <td>{{ booking.venueState }}</td>
-                <td>{{ booking.eventQuotedAmount | currency:'USD':true:'1.2-2' }}</td>
-                <td><button class="btn btn-primary" (click)="onSelect(booking)">View</button></td></tr>
-        </tbody>
-        
-    </table>
-</div>
--->
 <div class="container">
-    <h2>Bookings</h2>
+    <h4>Bookings</h4>
     <div>
             <input #funded type="checkbox" id="funded" name="funded" checked (change)="filterBookings($event)">
             <label for="funded">Include Funded</label>
@@ -57,8 +30,7 @@
         </tbody>
 
     </table>
-</div>
-<div>
-   <booking-detail [booking]="selectedBooking"></booking-detail> 
-   <booking-edit [booking]="bookingToEdit"></booking-edit>
+
+    <p>&nbsp;</p>
+    <a class="btn btn-primary" (click)="addBooking()"><i class="fa fa-plus-circle"></i>&nbsp;Add Booking</a>
 </div>

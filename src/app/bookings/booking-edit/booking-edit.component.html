@@ -1,3 +1,297 @@
-<div class="container" *ngIf="booking">
-    <h2>Booking Edit - {{ booking.key }}</h2>
+<div class="container">
+        <h4>Booking Edit</h4>
+        <h5>{{ booking.venueName }} on {{ booking.eventDate | date }}</h5>
+    
+    <ngb-tabset>
+            <ngb-tab>
+                <ng-template ngbTabTitle><i class="fa fa-bookmark-o"></i> Promoter</ng-template>
+                <ng-template ngbTabContent>
+                   <p>&nbsp;</p>
+                    <div class="table-responsive panel">
+
+                        <!--
+                        <table class="table">
+                            <tbody>
+    
+                                <tr>
+                                    <td class="text-primary"><i class="fa fa-user"></i> Name</td>
+                                    <td><input type="text" {{ booking.promoterName}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-primary"><i class="fa fa-mobile"></i> Cell</td>
+                                    <td>{{ booking.promoterNumber | phone }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-primary"><i class="fa fa-envelope-o"></i> Email</td>
+                                    <td>{{ booking.promoterEmail}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        -->
+                        
+                        <div class="form-group row">
+                            <label for="name" class="col-form-label col-2 text-primary"><i class="fa fa-user"></i> Name</label>
+                            <div class="col-10">
+                                <input type="text" class="form-control" id="name" [(ngModel)]="booking.promoterName" placeholder="Promoter Name">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="cell" class="col-form-label col-2 text-primary"><i class="fa fa-mobile"></i> Cell</label>
+                            <div class="col-10">
+                                <input type="tel" class="form-control" id="cell" [(ngModel)]="booking.promoterNumber">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="email" class="col-form-label col-2 text-primary"><i class="fa fa-envelope-o"></i> Email</label>
+                            <div class="col-10">
+                                <input type="email" class="form-control" id="email" [(ngModel)]="booking.promoterEmail">
+                            </div>
+                        </div>
+                    
+                    </div>
+                        
+                        
+                   
+                </ng-template>
+            </ngb-tab>
+            <ngb-tab>
+                <ng-template ngbTabTitle><i class="fa fa-building"></i> Venue</ng-template>
+                <ng-template ngbTabContent>
+                    <p>&nbsp;</p>
+                    <div class="table-responsive panel">
+                        <!--
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <td class="text-primary"><i class="fa fa-user"></i> Name</td>
+                                    <td>{{ booking.venueName}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-primary"><i class="fa fa-address-card-o"></i> Address</td>
+                                    <td>{{ booking.venueAddress}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-primary"><i class="fa fa-location-arrow"></i> City</td>
+                                    <td>{{ booking.venueCity}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-primary"><i class="fa fa-location-arrow"></i> State</td>
+                                    <td>{{ booking.venueState}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-primary"><i class="fa fa-location-arrow"></i> Website</td>
+                                    <td>{{ booking.venueWebsite}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-primary"><i class="fa fa-question"></i> Age Restriction</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        -->
+
+                        <div class="form-group row">
+                            <label for="venueName" class="col-form-label col-2 text-primary"><i class="fa fa-user"></i> Name</label>
+                            <div class="col-10">
+                                <input type="text" class="form-control" id="venueName" [(ngModel)]="booking.venueName" placeholder="Venue Name">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="venueAddress" class="col-form-label col-2 text-primary"><i class="fa fa-address-card-o"></i> Address</label>
+                            <div class="col-10">
+                                <input type="text" class="form-control" id="cell" [(ngModel)]="booking.venueAddress" placeholder="Venue Address">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="venueCity" class="col-form-label col-2 text-primary"><i class="fa fa-location-arrow"></i> City</label>
+                            <div class="col-10">
+                                <input type="text" class="form-control" id="venueCity" [(ngModel)]="booking.venueCity">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="venueWebsite" class="col-form-label col-2 text-primary"><i class="fa fa-location-arrow"></i> State</label>
+                            <div class="col-10">
+                                <input type="text" class="form-control" id="venueWebsite" [(ngModel)]="booking.venueWebsite">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="venueWebsite" class="col-form-label col-2 text-primary"><i class="fa fa-microchip"></i> Website</label>
+                            <div class="col-10">
+                                <input type="text" class="form-control" id="venueState" [(ngModel)]="booking.venueState">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="venueAgeRestriction" class="col-form-label col-2 text-primary"><i class="fa fa-question"></i> Age Restriction</label>
+                            <div class="col-10">
+                                <input type="text" class="form-control" id="venueAgeRestriction" [(ngModel)]="booking.venueAgeRestriction">
+                            </div>
+                        </div>
+                            
+
+                    </div>
+                </ng-template>
+            </ngb-tab>
+            <ngb-tab>
+                <ng-template ngbTabTitle><i class="fa fa-calendar"></i> Event</ng-template>
+                <ng-template ngbTabContent>
+                    <div class="table-responsive panel">
+                        <p>&nbsp;</p>
+
+                        <!--
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <td class="text-primary"><i class="fa fa-calendar"></i> Date</td>
+                                    <td>{{ booking.eventDate | date:'dd/MM/yyyy'}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-primary"><i class="fa fa-clock-o"></i> Time</td>
+                                    <td>{{ booking.eventTime}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-primary"><i class="fa fa-money"></i> Quoted Amount</td>
+                                    <td>{{ booking.eventQuotedAmount | currency:'USD':true:'1.2-2' }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-primary"><i class="fa fa-money"></i> Final Amount</td>
+                                    <td>{{ booking.eventFinalAmount | currency:'USD':true:'1.2-2' }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-primary"><i class="fa fa-female"></i> Dancers</td>
+                                    <td>{{ booking.includeDancers }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-primary"><i class="fa fa-shirtsinbulk"></i> Merch Booth</td>
+                                    <td>{{ booking.includeMerchBooth }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-primary"><i class="fa fa-paypal"></i> Funded</td>
+                                    <td>{{ booking.isFunded}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        -->
+                        
+                        <div class="form-group row">
+                                <label for="eventDate" class="col-form-label col-2 text-primary"><i class="fa fa-calendar"></i> Date</label>
+                                <div class="col-10">
+                                    <input type="date" class="form-control" id="eventDate" [(ngModel)]="booking.eventDate" >
+                                </div>
+                            </div>
+    
+                            <div class="form-group row">
+                                <label for="eventTime" class="col-form-label col-2 text-primary"><i class="fa fa-clock-o"></i> Time</label>
+                                <div class="col-10">
+                                    <input type="time" class="form-control" id="cell" [(ngModel)]="booking.eventTime">
+                                </div>
+                            </div>
+    
+                            <div class="form-group row">
+                                <label for="eventQuotedAmount" class="col-form-label col-2 text-primary"><i class="fa fa-money"></i> Quoted Amnt</label>
+                                <div class="col-10">
+                                    <input type="text" class="form-control" id="eventQuotedAmount" [(ngModel)]="booking.eventQuotedAmount">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                    <label for="eventFinalAmount" class="col-form-label col-2 text-primary"><i class="fa fa-money"></i> Final Amnt</label>
+                                    <div class="col-10">
+                                        <input type="text" class="form-control" id="eventFinalAmount" [(ngModel)]="booking.eventFinalAmount">
+                                    </div>
+                                </div>
+                            
+                            <div class="form-group row">
+                                <label class="col-2 text-primary"><i class="fa fa-female"></i> Dancers</label>
+                                <div class="col-sm-10">
+                                    <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" [(ngModel)]="booking.includeDancers"> Yes
+                                    </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                    <label class="col-2 text-primary"><i class="fa fa-cart-plus"></i> Merch Booth</label>
+                                    <div class="col-sm-10">
+                                        <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="checkbox" [(ngModel)]="booking.includeMerchBooth"> Yes
+                                        </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+    
+                                <div class="form-group row">
+                                        <label class="col-2 text-primary"><i class="fa fa-cc-paypal"></i> Funded</label>
+                                        <div class="col-sm-10">
+                                            <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" type="checkbox" [(ngModel)]="booking.isFunded"> Yes
+                                            </label>
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                            
+
+
+                    </div>
+                </ng-template>
+            </ngb-tab>
+            <ngb-tab>
+                <ng-template ngbTabTitle><i class="fa fa-list-alt"></i> Instructions</ng-template>
+                <ng-template ngbTabContent>
+                    <div class="table-responsive panel">
+                        <p>&nbsp;</p>
+                        <!--
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <td class="text-primary"><i class="fa fa-list"></i> Instructions</td>
+                                    <td>{{ booking.specialInstructions}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    -->
+                        <div class="form-group row">
+                            <label for="specialInstructions" class="col-form-label col-2 text-primary"><i class="fa fa-list"></i> Sp. Instructions</label>
+                            <div class="col-10">
+                                <textarea class="form-control" id="specialInstructions" [(ngModel)]="booking.specialInstructions" rows="5"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </ngb-tab>
+            <ngb-tab>
+                <ng-template ngbTabTitle><i class="fa fa-sticky-note"></i> Notes</ng-template>
+                <ng-template ngbTabContent>
+                    <div class="table-responsive panel">
+                        <table class="table">
+                            <tbody>
+                                <tr *ngFor="let note of booking.notes">
+                                    <td class="text-primary" style="width:15%"><i class="fa fa-calendar"></i> {{ note.createdDate | date:'dd/MM/yyyy' }}</td>
+                                    <td class="text-primary" style="width:10%"><i class="fa fa-user"></i> {{ note.createdUserName}}</td>
+                                    <td class="text-left">{{ note.textValue}}</td>
+                                </tr>
+    
+                            </tbody>
+                        </table>
+                    </div>
+                </ng-template>
+            </ngb-tab>
+        </ngb-tabset>
+    
+
+    <p>&nbsp;</p>
+    <a class="btn btn-primary" (click)="goToBookings()"><i class="fa fa-arrow-left"></i>&nbsp;Cancel</a>
+    <a class="btn btn-primary" ><i class="fa fa-floppy-o"></i>&nbsp;Save</a>
 </div>
+

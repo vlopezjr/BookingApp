@@ -4,6 +4,13 @@
     {{title}}
   </h1>  
 </div>
-<app-bookings></app-bookings>
-
+<div class="container">
+  <nav>
+      <a routerLink="/bookings" routerLinkActive="active">Bookings</a>
+      <a routerLink="/venues" routerLinkActive="active">Venues</a>
+      <a routerLink="/promoters" routerLinkActive="active">Promoters</a>
+  </nav>
+  <p>&nbsp;</p>
+   <router-outlet></router-outlet>
+</div>
 

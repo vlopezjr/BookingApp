@@ -5,7 +5,8 @@ export class Booking {
     promoterName: string;
     promoterNumber: string;
     promoterEmail: string;
-    eventDate: Date;   
+    eventDate: string;   
+    eventTime: string;
     eventType: string; 
     venueName: string;
     venueAddress: string;
@@ -13,6 +14,7 @@ export class Booking {
     venueState: string;
     venueCountry: string;
     venueWebsite: string;
+    venueAgeRestriction: string;
     numberTravelling: number;
     namesTravelling: string;
     includeDancers: boolean;

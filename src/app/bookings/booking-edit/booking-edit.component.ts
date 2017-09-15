@@ -1,6 +1,10 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+
+import 'rxjs/add/operator/switchMap';
 
 import { Booking } from '../shared/booking';
+import { BOOKINGS } from '../shared/mock-bookings';
 
 @Component({
   selector: 'booking-edit',
@@ -8,11 +12,20 @@ import { Booking } from '../shared/booking';
   styleUrls: ['./booking-edit.component.css']
 })
 export class BookingEditComponent implements OnInit {
-  @Input() booking: Booking;
+  booking: Booking;
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router
+  ) { }
 
   ngOnInit() {
-  }
+    let id = this.route.snapshot.paramMap.get('id');
 
+    this.booking = BOOKINGS.filter(b => b.key == +id)[0];
+  }
+  
+  goToBookings(){
+    this.router.navigate(['/bookings']);
+  }
 }
